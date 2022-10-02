@@ -11,11 +11,11 @@ int my_printf(char *format_string, char *param)
 			{
 				if (islower(*(param + j))
 				{	
-					*(param+j) = isupper(*(param+j));
+					*(param+j) = toupper(*(param+j));
 				}
 				else
 				{
-					*(param+j) = islower(*(param+j));
+					*(param+j) = tolower(*(param+j));
 				}
 			}
 			
