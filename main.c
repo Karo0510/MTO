@@ -5,11 +5,12 @@
 int my_printf(char *format_string, char *param)
 {
 	for(int i=0;i<strlen(format_string);i++){
-		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
+		if((format_string[i] == '#') && (format_string[i+1] == 'k'))
+		{
 			i++;
-			for (int j = 0; j<strlen(param); j++)
+			for(int j = 0; j<strlen(param); j++)
 			{
-				if (islower(*(param + j))
+				if (islower(*(param + j)))
 				{	
 					*(param+j) = toupper(*(param+j));
 				}
