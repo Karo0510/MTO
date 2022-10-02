@@ -22,8 +22,9 @@ int my_printf(char *format_string, char *param)
 			
 			printf("%s",param);
 		}else
+		{
 			putchar(format_string[i]);
-	}
+		}
 	puts("");
 }
 
