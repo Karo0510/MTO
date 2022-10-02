@@ -9,13 +9,13 @@ int my_printf(char *format_string, char *param)
 			i++;
 			for (int j = 0; j<strlen(param); j++)
 			{
-				if (islower(*param))
+				if (islower(*(param + j))
 				{	
-					*param = isupper(*param);
+					*(param+j) = isupper(*(param+j));
 				}
 				else
 				{
-					*param = islower(param);
+					*(param+j) = islower(*(param+j));
 				}
 			}
 			
