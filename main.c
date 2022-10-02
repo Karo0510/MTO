@@ -7,7 +7,7 @@ int my_printf(char *format_string, char *param)
 	for(int i=0;i<strlen(format_string);i++){
 		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
 			i++;
-			for (j = 0; strlen(param); j++)
+			for (int j = 0; j<strlen(param); j++)
 			{
 				if (islower(*param))
 				{	
