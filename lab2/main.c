@@ -10,15 +10,21 @@ int my_printf(char *format_string, char *param)
 		{
 			i++;
 			
-			if (islower(*param))
+			int liczba = atoi(format_string[i+1]);
+			
+			for (int j = 0; j<liczba; i++)
 			{
-				*param = toupper(*param); 
+				if (islower(*param))
+				{
+					*param = toupper(*param); 
+				}
+				else
+				{
+					*param = tolower(*param);
+				}
+				printf("%s",param);
 			}
-			else
-			{
-				*param = tolower(*param);
-			}
-			printf("%s",param);
+			
 		}
 		else
 			putchar(format_string[i]);
