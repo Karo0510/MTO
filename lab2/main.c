@@ -27,7 +27,20 @@ int my_printf(char *format_string, char *param)
 					printf("%s",param);
 				}
 			}
-
+			else
+			{
+				if (format_string[i+1] == '.' && isdigit(format_string[i+2]) && format_string[i+3] == 'k' )
+				{
+					int liczba = atoi(format_string[i+2]);
+					i = i+3;
+					
+					for (int j=0; j<liczba; j++)
+					{
+						*(param + j) = toupper(*(param + j)); 
+						printf("%c", *(param + j));
+					}
+				}
+			}
 		}
 		else
 			putchar(format_string[i]);
