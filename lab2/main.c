@@ -7,7 +7,6 @@ int my_printf(char *format_string, char *param)
 {
 	for(int i=0;i<strlen(format_string)-3;i++)
 	{
-	
 		if (format_string[i] == '#')
 		{
 			if((format_string[i+1] == 'k'))
@@ -31,13 +30,7 @@ int my_printf(char *format_string, char *param)
 			{
 				if (format_string[i+1] == '.' && isdigit(format_string[i+2]) && format_string[i+3] == 'k' )
 				{
-					int liczba = atoi(format_string[i+2]);
-					
-					if ((liczba > strlen(param)) || (liczba <= 0))
-					{
-						printf("Niezgodnosc parametrow");
-						return 1;
-					}
+					int liczba = format_string[i+2] - '0';
 					
 					i = i+3;
 					
