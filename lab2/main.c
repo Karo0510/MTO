@@ -5,7 +5,7 @@
 
 int my_printf(char *format_string, char *param)
 {
-	for(int i=0;i<strlen(format_string);i++)
+	for(int i=0;i<strlen(format_string)-3;i++)
 	{
 	
 		if (format_string[i] == '#')
@@ -18,11 +18,11 @@ int my_printf(char *format_string, char *param)
 				{
 					if (islower(*param+j))
 					{
-						*(param+j) = toupper(*param+j); 
+						*(param+j) = toupper(*(param+j)); 
 					}
 					else
 					{
-						*(param+j) = tolower(*param+j);
+						*(param+j) = tolower(*(param+j));
 					}
 					printf("%s",param);
 				}
@@ -32,12 +32,26 @@ int my_printf(char *format_string, char *param)
 				if (format_string[i+1] == '.' && isdigit(format_string[i+2]) && format_string[i+3] == 'k' )
 				{
 					int liczba = atoi(format_string[i+2]);
+					
+					if ((liczba > strlen(param)) || (liczba <= 0))
+					{
+						printf("Niezgodnosc parametrow");
+						return 1;
+					}
+					
 					i = i+3;
 					
 					for (int j=0; j<liczba; j++)
 					{
-						*(param + j) = toupper(*(param + j)); 
-						printf("%c", *(param + j));
+						if (islower(*param+j))
+						{
+							*(param+j) = toupper(*(param+j)); 
+						}
+						else
+						{
+							*(param+j) = tolower(*(param+j));
+						}
+						printf("%c",*(param+j));
 					}
 				}
 			}
