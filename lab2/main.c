@@ -1,30 +1,42 @@
 #include <stdio.h>
 #include <string.h>
 #include<ctype.h>
+#include<stdlib.h>
 
 int my_printf(char *format_string, char *param)
 {
 	for(int i=0;i<strlen(format_string);i++)
 	{
-		if((format_string[i] == '#') && isdigit(format_string[i+1]) && (format_string[i+2] == 'k'))
+	
+		if (format_string[i] == '#')
 		{
-			i++;
+			if((format_string[i+2] == 'k'))
+			{ 
+				i++;
 			
-			int liczba = atoi(format_string[i+1]);
+				int liczba = atoi(format_string[i+1]);
 			
-			for (int j = 0; j<liczba; i++)
+				for (int j = 0; j<strlen(param); j++)
+				{
+					if (islower(*param+j))
+					{
+						*(param+j) = toupper(*param+j); 
+					}
+					else
+					{
+						*(param+j) = tolower(*param+j);
+					}
+					printf("%s",param);
+			}
+			else
 			{
-				if (islower(*param))
+				if ((format_string[i+1] == '.') && isdigit(format_string[i+2]) && isdigit(format_string[i+3]))
 				{
-					*param = toupper(*param); 
+					printf("")
 				}
-				else
-				{
-					*param = tolower(*param);
-				}
-				printf("%s",param);
 			}
 			
+
 		}
 		else
 			putchar(format_string[i]);
