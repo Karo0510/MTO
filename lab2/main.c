@@ -10,11 +10,9 @@ int my_printf(char *format_string, char *param)
 	
 		if (format_string[i] == '#')
 		{
-			if((format_string[i+2] == 'k'))
+			if((format_string[i+1] == 'k'))
 			{ 
 				i++;
-			
-				int liczba = atoi(format_string[i+1]);
 			
 				for (int j = 0; j<strlen(param); j++)
 				{
@@ -27,15 +25,8 @@ int my_printf(char *format_string, char *param)
 						*(param+j) = tolower(*param+j);
 					}
 					printf("%s",param);
-			}
-			else
-			{
-				if ((format_string[i+1] == '.') && isdigit(format_string[i+2]) && isdigit(format_string[i+3]))
-				{
-					printf("")
 				}
 			}
-			
 
 		}
 		else
