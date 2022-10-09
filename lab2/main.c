@@ -15,7 +15,7 @@ int my_printf(char *format_string, char *param)
 			
 				for (int j = 0; j<strlen(param); j++)
 				{
-					if (islower(*param+j))
+					if (islower(*(param+j)))
 					{
 						*(param+j) = toupper(*(param+j)); 
 					}
@@ -36,7 +36,7 @@ int my_printf(char *format_string, char *param)
 					
 					for (int j=0; j<liczba; j++)
 					{
-						if (islower(*param+j))
+						if (islower(*(param+j)))
 						{
 							*(param+j) = toupper(*(param+j)); 
 						}
