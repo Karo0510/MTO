@@ -12,6 +12,7 @@ int my_printf(char *format_string, char *param)
 			if((format_string[i+1] == 'k'))
 			{ 
 				i++;
+				printf("%s", param);
 			
 				for (int j = 0; j<strlen(param); j++)
 				{
@@ -28,11 +29,12 @@ int my_printf(char *format_string, char *param)
 			}
 			else
 			{
-				if (format_string[i+1] == '.' && isdigit(format_string[i+2]) && format_string[i+3] == 'k' )
+				if (isdigit(format_string[i+1]) && format_string[i+2] == 'k' )
 				{
-					int liczba = format_string[i+2] - '0';
+					int liczba = format_string[i+1] - '0';
 					
-					i = i+3;
+					i = i+2;
+					printf("%s", param);
 					
 					for (int j=0; j<liczba; j++)
 					{
