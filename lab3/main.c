@@ -24,7 +24,6 @@ int my_printf(char *format_string, char *param)
 					{
 						*(format_string+j) = tolower(*(format_string+j));
 					}
-					//printf("%s",format_string);
 				}
 			}
 			else
@@ -41,7 +40,7 @@ int my_printf(char *format_string, char *param)
 						i = i+2;
 						printf("%s", param);
 					
-						for (int j=0; j<liczba; j++)
+						for (int j=i; j<liczba+i; j++)
 						{
 							if (islower(*(format_string+j)))
 							{
@@ -51,14 +50,13 @@ int my_printf(char *format_string, char *param)
 							{
 								*(format_string+j) = tolower(*(format_string+j));
 							}
-							//printf("%c",*(format_string+j));
 						}
 					}
 					
 				}
 				else
 				{
-					//putchar(format_string[i]);
+					putchar(format_string[i]);
 				}
 			}
 		}
