@@ -5,7 +5,7 @@
 
 int my_printf(char *format_string, char *param)
 {
-	for(int i=0;i<strlen(format_string)-3;i++)
+	for(int i=0;i<strlen(format_string);i++)
 	{
 		if (format_string[i] == '#')
 		{
@@ -24,7 +24,7 @@ int my_printf(char *format_string, char *param)
 					{
 						*(format_string+j) = tolower(*(format_string+j));
 					}
-					printf("%s",param);
+					//printf("%s",format_string);
 				}
 			}
 			else
@@ -33,25 +33,32 @@ int my_printf(char *format_string, char *param)
 				{
 					int liczba = format_string[i+1] - '0';
 					
-					i = i+2;
-					printf("%s", param);
-					
-					for (int j=0; j<liczba; j++)
+					if (liczba < 0)
 					{
-						if (islower(*(format_string+j)))
+					}else
+					{
+						
+						i = i+2;
+						printf("%s", param);
+					
+						for (int j=0; j<liczba; j++)
 						{
-							*(format_string+j) = toupper(*(format_string+j)); 
+							if (islower(*(format_string+j)))
+							{
+								*(format_string+j) = toupper(*(format_string+j)); 
+							}
+							else
+							{
+								*(format_string+j) = tolower(*(format_string+j));
+							}
+							//printf("%c",*(format_string+j));
 						}
-						else
-						{
-							*(format_string+j) = tolower(*(format_string+j));
-						}
-						printf("%c",*(format_string+j));
 					}
+					
 				}
 				else
 				{
-					putchar(format_string[i]);
+					//putchar(format_string[i]);
 				}
 			}
 		}
