@@ -50,7 +50,7 @@ int my_printf(char *format_string, char *param)
 							{
 								*(format_string+j) = tolower(*(format_string+j));
 							}
-							putchar(*(format_string+j));
+							//putchar(*(format_string+j));
 						}
 					}
 					
