@@ -49,6 +49,10 @@ int my_printf(char *format_string, char *param)
 						printf("%c",*(format_string+j));
 					}
 				}
+				else
+				{
+					putchar(format_string[i]);
+				}
 			}
 		}
 		else
