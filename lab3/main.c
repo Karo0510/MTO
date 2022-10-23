@@ -40,7 +40,7 @@ int my_printf(char *format_string, char *param)
 						i = i+2;
 						printf("%s", param);
 					
-						for (int j=i; j<liczba+i; j++)
+						for (int j=0; j<liczba; j++)
 						{
 							if (islower(*(format_string+j)))
 							{
@@ -50,6 +50,7 @@ int my_printf(char *format_string, char *param)
 							{
 								*(format_string+j) = tolower(*(format_string+j));
 							}
+							putchar(*(format_string+j));
 						}
 					}
 					
