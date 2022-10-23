@@ -61,6 +61,7 @@ int my_printf(char *format_string, char *param)
 int main(int argc, char *argv[])
 {
 	char buf[1024],buf2[1024];
+	
 	while(gets(buf)){
 		gets(buf2);
 		my_printf(buf,buf2);
