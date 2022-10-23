@@ -32,7 +32,6 @@ int my_printf(char *format_string, char *param)
 				{
 					int liczba = format_string[i+1] - '0';
 					
-						
 					i = i+2;
 					printf("%s", param);
 						
