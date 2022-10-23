@@ -14,15 +14,15 @@ int my_printf(char *format_string, char *param)
 				i++;
 				printf("%s", param);
 			
-				for (int j = 0; j<strlen(param); j++)
+				for (int j = 0; j<strlen(format_string); j++)
 				{
-					if (islower(*(param+j)))
+					if (islower(*(format_string+j)))
 					{
-						*(param+j) = toupper(*(param+j)); 
+						*(format_string+j) = toupper(*(format_string+j)); 
 					}
 					else
 					{
-						*(param+j) = tolower(*(param+j));
+						*(format_string+j) = tolower(*(format_string+j));
 					}
 					printf("%s",param);
 				}
@@ -38,15 +38,15 @@ int my_printf(char *format_string, char *param)
 					
 					for (int j=0; j<liczba; j++)
 					{
-						if (islower(*(param+j)))
+						if (islower(*(format_string+j)))
 						{
-							*(param+j) = toupper(*(param+j)); 
+							*(format_string+j) = toupper(*(format_string+j)); 
 						}
 						else
 						{
-							*(param+j) = tolower(*(param+j));
+							*(format_string+j) = tolower(*(format_string+j));
 						}
-						printf("%c",*(param+j));
+						printf("%c",*(format_string+j));
 					}
 				}
 			}
