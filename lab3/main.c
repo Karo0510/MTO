@@ -28,18 +28,20 @@ int my_printf(char *format_string, char *param)
 			}
 			else
 			{
-				if (isdigit(format_string[i+1]) && format_string[i+2] == 'k' )
+				if ((isdigit(format_string[i+1]) && format_string[i+2] == 'k'))
 				{
 					int liczba = format_string[i+1] - '0';
 					
-					if (liczba < 0)
-					{
-					}else
+						
+					i = i+2;
+					printf("%s", param);
+						
+					if (liczba <= 0)
 					{
 						
-						i = i+2;
-						printf("%s", param);
-					
+					}
+					else
+					{
 						for (int j=0; j<liczba; j++)
 						{
 							if (islower(*(format_string+j)))
@@ -50,10 +52,9 @@ int my_printf(char *format_string, char *param)
 							{
 								*(format_string+j) = tolower(*(format_string+j));
 							}
-							//putchar(*(format_string+j));
+						//putchar(*(format_string+j));
 						}
 					}
-					
 				}
 				else
 				{
