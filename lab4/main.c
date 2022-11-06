@@ -5,22 +5,19 @@
 int my_printf_int(char* number, char* param)
 {
 
-	if (!isdigit(number))
+	for (int i = 0; i<strlen(number); i++)
 	{
-		return -1;
-	}
-	
-	for (int i = 0 i<strlen(number); i++)
-	{
-		if ((format_string[i] == '#') && (format_string[i+1] == 'g'))
+		if ((number[i] == '#') && (number[i+1] == 'g'))
 		{
 			i++;
 			printf("%s", param);
 			
-			if (int j = strlen(number); j>=0; j--)
+		
+			for (int j = strlen(number)-1; j>=i; j--)
 			{
 				putchar(number[j]);
 			}
+	
 		}
 		else
 		{
@@ -50,5 +47,6 @@ int main(int argc, char *argv[]){
 		gets(buf2);
 		my_printf_int(buf,buf2);
 	}
+	
 	return 0;
 }
