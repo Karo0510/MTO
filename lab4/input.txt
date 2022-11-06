@@ -2,3 +2,13 @@ totafsdfsf #g 12345
 test
 ala #g 2345
 test2
+ala # g 2345
+test3
+lato #k 2345
+test4
+fsdd #g tom
+test5
+abc #g -1234
+test6
+www #g 104
+test7

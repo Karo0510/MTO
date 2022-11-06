@@ -12,32 +12,22 @@ int my_printf_int(char* number, char* param)
 			i++;
 			printf("%s", param);
 			
-		
-			for (int j = strlen(number)-1; j>=i; j--)
+			
+			for (int j = strlen(number)-1; j>i; j--)
 			{
 				putchar(number[j]);
 			}
+			break;
 	
 		}
 		else
 		{
 			putchar(number[i]);
 		}
+
 	}
 	puts("");
 	
-	return 0;
-}
-
-int my_printf(char *format_string, char *param){
-	for(int i=0;i<strlen(format_string);i++){
-		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
-			i++;
-			printf("%s",param);
-		}else
-			putchar(format_string[i]);
-	}
-	puts("");
 	return 0;
 }
 
