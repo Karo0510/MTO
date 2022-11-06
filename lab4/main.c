@@ -12,18 +12,38 @@ int my_printf_int(char* number, char* param)
 			i = i+1;
 			printf("%s ", param);
 			
-			for (int j = strlen(number)-1; j>i; j--)
-			{
 			
-				if (number[j] == ' ')
+			int licznik = 0;
+			
+			for (int k = i; *(number + k)!= ' '; k++)
+			{
+				licznik++;
+			}
+			
+			int liczba = atoi(number + i+licznik);
+				
+			if (liczba == 0)
+			{
+				printf("To nie liczba");
+			}
+			else
+			{
+				for (int j = strlen(number)-1; j>i; j--)
 				{
-					continue;
-				}
-				else
-				{
-					putchar(number[j]);
+				
+					if (number[j] == ' ')
+					{
+						continue;
+					}
+					else
+					{
+						putchar(number[j]);
+					}
 				}
 			}
+			
+			
+			
 			break;
 	
 		}
