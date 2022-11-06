@@ -12,8 +12,7 @@ int my_printf_int(char* number, char* param)
 			i++;
 			printf("%s", param);
 			
-			
-			for (int j = strlen(number)-1; j>i; j--)
+			for (int j = strlen(number)-1; j>i; --j)
 			{
 				putchar(number[j]);
 			}
