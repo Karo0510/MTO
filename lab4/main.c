@@ -9,12 +9,20 @@ int my_printf_int(char* number, char* param)
 	{
 		if ((number[i] == '#') && (number[i+1] == 'g'))
 		{
-			i = i+2;
+			i = i+1;
 			printf("%s ", param);
 			
 			for (int j = strlen(number)-1; j>i; j--)
 			{
-				putchar(number[j]);
+			
+				if (number[j] == ' ')
+				{
+					continue;
+				}
+				else
+				{
+					putchar(number[j]);
+				}
 			}
 			break;
 	

@@ -12,3 +12,9 @@ abc #g -1234
 test6
 www #g 104
 test7
+www #g104
+test8
+aaa #g 123
+test9
+bbb # g abc
+test10
