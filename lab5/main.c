@@ -30,6 +30,7 @@ int my_printf_int(char* number, char* param)
 			else
 			{
 				putchar('-1');
+				continue;
 			}
 			
 		}
