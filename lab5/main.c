@@ -7,45 +7,31 @@ int my_printf_int(char* number, char* param)
 
 	for (int i = 0; i<strlen(number); i++)
 	{
-		if ((number[i] == '#') && (number[i+1] == 'g'))
+		if ((number[i] == '#') && (isdigit(number[i+1])) && (number[i+2] == 'g'))
 		{
-			i = i+1;
-			printf("%s ", param);
+			i = i+2;
+			printf("%s", param);
 			
-			
-			int licznik = 0;
-			
-			for (int k = i; *(number + k)!= ' '; k++)
+			if (isdigit(number[i]))
 			{
-				licznik++;
-			}
-			
-			int liczba = atoi(number + i+licznik);
+				int l = atoi(number[i]);
 				
-			if (liczba == 0)
-			{
-				printf("To nie liczba");
+				if (l == 0)
+				{
+					l = 9;
+				}
+				else
+				{
+					l = l - 1;
+				}
+				char x = l + '0';
+				putchar(x);
 			}
 			else
 			{
-				for (int j = strlen(number)-1; j>i; j--)
-				{
-				
-					if (number[j] == ' ')
-					{
-						continue;
-					}
-					else
-					{
-						putchar(number[j]);
-					}
-				}
+				putchar('-1');
 			}
 			
-			
-			
-			break;
-	
 		}
 		else
 		{
