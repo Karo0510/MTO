@@ -9,29 +9,38 @@ int my_printf_int(char* number, char* param)
 	{
 		if ((number[i] == '#') && (isdigit(number[i+1])) && (number[i+2] == 'g'))
 		{
-			i = i+2;
+			i = i+3;
 			printf("%s", param);
 			
-			if (isdigit(number[i]))
+			if (i < strlen(number))
+				break;
+			
+			for (int j = 0; j<i; j++)
 			{
-				int l = atoi(number[i]);
-				
-				if (l == 0)
+				if (isdigit(number[j]))
 				{
-					l = 9;
+					int l = atoi(number[j]);
+				
+					if (l == 0)
+					{
+						l = 9;
+					}
+					else
+					{
+						l = l - 1;
+					}
+					char x = l + '0';
+				
+					putchar(x);
 				}
 				else
 				{
-					l = l - 1;
+					putchar('-1');
+					continue;
 				}
-				char x = l + '0';
-				putchar(x);
-			}
-			else
-			{
-				putchar('-1');
-				continue;
-			}
+				}
+			
+			
 			
 		}
 		else

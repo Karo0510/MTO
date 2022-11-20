@@ -1,10 +1,10 @@
-totafsdfsf test1 12345
-ala test21 2345
+totafsdfsf test
+ala test2
 ala # g 2345
 lato #k 2345
-fsdd test51 tom
-abc test61 -1234
-www test71 104
+fsdd test5
+abc test6
+www test7
 www #g104
-aaa test91 123
+aaa test9
 bbb # g abc
