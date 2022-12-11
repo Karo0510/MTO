@@ -1,4 +1,4 @@
-totafsdfsf test
+totafsdfsf test																					4378
 ala test2
 ala # g 2345
 lato #k 2345
@@ -8,3 +8,5 @@ www test7
 www #g104
 aaa test9
 bbb # g abc
+abcdef test10																123
+alamakota test11																				1234

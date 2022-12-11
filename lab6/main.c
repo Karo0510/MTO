@@ -5,6 +5,8 @@
 int my_printf_int(char* number, char* param)
 {
 
+	
+	int new_cyfra = 0;
 	for (int i = 0; i<strlen(number); i++)
 	{
 		if (((number[i] == '#') && (number[i+1] == '.') && (isdigit(number[i+2])) && (number[i+3] == 'g')))
@@ -12,10 +14,7 @@ int my_printf_int(char* number, char* param)
 			i = i+4;
 			printf("%s", param);
 
-			if (i < strlen(number))
-				break;
-
-			for (int j = 0; j<i; j++)
+			for (int j = 0; j<strlen(number); j++)
 			{
 				new_cyfra = (number[i]*9+1)%10;
 
@@ -23,10 +22,12 @@ int my_printf_int(char* number, char* param)
 				{
 					new_cyfra = 9;
 				}
+				
+				putchar(new_cyfra);
 			}
 		}
 		else if ((number[i] == '#') && (isdigit(number[i+1])) && (number[i+2] == 'g'))
-		{
+{
 			i = i+3;
 			printf("%s", param);
 			
@@ -51,15 +52,7 @@ int my_printf_int(char* number, char* param)
 				
 					putchar(x);
 				}
-				else
-				{
-					putchar('-1');
-					continue;
-				}
-				}
-			
-			
-			
+		}
 		}
 		else
 		{

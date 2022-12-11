@@ -1,4 +1,4 @@
-totafsdfsf #5g 12345
+totafsdfsf #.4g 4378
 test
 ala #4g 2345
 test2
@@ -18,3 +18,7 @@ aaa #3g 123
 test9
 bbb # g abc
 test10
+abcdef #.3g 123
+test10
+alamakota #.4g 1234
+test11
