@@ -6,19 +6,15 @@ ala # g 2345
 test3
 lato #k 2345
 test4
-fsdd #3g tom
+fsdd #3k tom
 test5
-abc #5g -1234
+abc #.5g 12345
 test6
-www #3g 104
+www #.3g 104
 test7
-www #g104
-test8
-aaa #3g 123
-test9
 bbb # g abc
-test10
+test8
 abcdef #.3g 123
-test10
+test9
 alamakota #.4g 1234
-test11
+test10

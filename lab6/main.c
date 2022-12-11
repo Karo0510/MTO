@@ -4,8 +4,6 @@
 
 int my_printf_int(char* number, char* param)
 {
-
-	
 	int new_cyfra = 0;
 	for (int i = 0; i<strlen(number); i++)
 	{
@@ -25,34 +23,6 @@ int my_printf_int(char* number, char* param)
 				
 				putchar(new_cyfra);
 			}
-		}
-		else if ((number[i] == '#') && (isdigit(number[i+1])) && (number[i+2] == 'g'))
-{
-			i = i+3;
-			printf("%s", param);
-			
-			if (i < strlen(number))
-				break;
-			
-			for (int j = 0; j<i; j++)
-			{
-				if (isdigit(number[j]))
-				{
-					int l = atoi(number[j]);
-				
-					if (l == 0)
-					{
-						l = 9;
-					}
-					else
-					{
-						l = l - 1;
-					}
-					char x = l + '0';
-				
-					putchar(x);
-				}
-		}
 		}
 		else
 		{

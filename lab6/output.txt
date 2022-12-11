@@ -1,12 +1,10 @@
 totafsdfsf test																					4378
-ala test2
+ala #4g 2345
 ala # g 2345
 lato #k 2345
-fsdd test5
-abc test6
-www test7
-www #g104
-aaa test9
+fsdd #3k tom
+abc test6															12345
+www test7													104
 bbb # g abc
-abcdef test10																123
-alamakota test11																				1234
+abcdef test9																123
+alamakota test10																				1234
