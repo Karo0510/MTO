@@ -9,12 +9,14 @@ int my_printf_int(char* number, char* param)
 	{
 		if (((number[i] == '#') && (number[i+1] == '.') && (isdigit(number[i+2])) && (number[i+3] == 'g')))
 		{
+			int size = number[i+2] - '0';
 			i = i+4;
-			printf("%s", param);
+			printf("%s ", param);
 
 			for (int j = 0; j<strlen(number); j++)
 			{
-				new_cyfra = (number[i]*9+1)%10;
+				int liczba = number[j] - '0';
+				new_cyfra = (liczba*9+1)%10;
 
 				if (new_cyfra == 0)
 				{
