@@ -8,6 +8,7 @@ void change(long long n, int p)
      if(n>0)
      {
          change(n/p,p);
+         
          if(n%p>9)
             switch(n%p)
             {
@@ -36,9 +37,9 @@ int my_printf_hex(char* number, char* param)
 	
 	for (int i = 0; i<size; i++)
 	{
-		if((number[i] == "#") && (number[i+1] == "j"))
+		if((number[i] == '#') && (number[i+1] == 'j'))
 		{
-			i = i+2;
+			i = i+1;
 			printf("%s", param);
 	
 			char num[10];
