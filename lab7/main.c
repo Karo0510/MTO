@@ -3,43 +3,34 @@
 #include<ctype.h>
 
 
-char change(long long n, int p)
+char change(long long n)
 {
 
-char zn = ' ';
-     if(n>0)
-     {
-         //change(n/p,p);
-         
-         if(n%p>9)
-            switch(n%p)
-            {
+	char zn = ' ';
+	
+	if (n>9)
+	{
+		switch(n)
+            	{
                case 10:
                zn = 'G';break;
-                 //putchar('G'); break;
                case 11:
                zn = 'H';break;
-                 //putchar('H'); break;
                case 12:
 		zn = 'I';break;
-                 //putchar('I'); break;
                case 13:
                zn = 'J';break;
-                 //putchar('J'); break;
                case 14:
                zn = 'K';break;
-                 //putchar('K'); break;
                case 15:
                zn = 'L';break;
-                 //putchar('L'); break;
                default:
                break;
-                //putchar(n%p); break;
-            }
+            	}			
+	}
          else
-         	zn = n%p + '0';
-             //putchar(n%p+'0');
-     }
+         	zn = n + '0';
+     
      
      return zn;
 }
@@ -65,8 +56,8 @@ int my_printf_hex(char* number, char* param)
 			
 			while(a>0)
 			{
+				putchar(change(a%16));
 				int res = (int)a/16;
-				putchar(change(a%16, 16));
 				a = res;
 			}
 			
