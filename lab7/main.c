@@ -52,14 +52,25 @@ int my_printf_hex(char* number, char* param)
 			
 			strncpy(num, number+i+1, roznica);
 			
-			long long int a = num - '0';
+			long long int a = atoi(num);
+			char result[10];
+			int i = 0;
 			
 			while(a>0)
 			{
-				putchar(change(a%16));
+				result[i] = change(a%16);
 				int res = (int)a/16;
 				a = res;
+				i = i+1;
 			}
+			result[i] = '\x0';
+			
+			for (int i = strlen(result)-1; i>=0; i--)
+			{
+				putchar(result[i]);
+			}
+			
+			break;
 			
 		} 
 		else
