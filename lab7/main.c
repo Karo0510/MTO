@@ -3,31 +3,45 @@
 #include<ctype.h>
 
 
-void change(long long n, int p)
+char change(long long n, int p)
 {
+
+char zn = ' ';
      if(n>0)
      {
-         change(n/p,p);
+         //change(n/p,p);
          
          if(n%p>9)
             switch(n%p)
             {
                case 10:
-                 putchar('G'); break;
+               zn = 'G';break;
+                 //putchar('G'); break;
                case 11:
-                 putchar('H'); break;
+               zn = 'H';break;
+                 //putchar('H'); break;
                case 12:
-                 putchar('I'); break;
+		zn = 'I';break;
+                 //putchar('I'); break;
                case 13:
-                 putchar('J'); break;
+               zn = 'J';break;
+                 //putchar('J'); break;
                case 14:
-                 putchar('K'); break;
+               zn = 'K';break;
+                 //putchar('K'); break;
                case 15:
-                 putchar('L'); break;
+               zn = 'L';break;
+                 //putchar('L'); break;
+               default:
+               break;
+                //putchar(n%p); break;
             }
          else
-             putchar(n%p);
+         	zn = n%p + '0';
+             //putchar(n%p+'0');
      }
+     
+     return zn;
 }
 
 int my_printf_hex(char* number, char* param)
@@ -45,11 +59,17 @@ int my_printf_hex(char* number, char* param)
 			char num[10];
 			int roznica = size - i;
 			
-			strncpy(num, number, roznica);
+			strncpy(num, number+i+1, roznica);
 			
 			long long int a = num - '0';
 			
-			change(a, 16);
+			while(a>0)
+			{
+				int res = (int)a/16;
+				putchar(change(a%16, 16));
+				a = res;
+			}
+			
 		} 
 		else
 		{
