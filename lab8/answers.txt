@@ -4,7 +4,9 @@ ala test3 929
 lato #k 2345
 fsdd #3k tom
 abc test6 10
-www test7 104
+www test7 68
 bbb #j abc
 abcdef test9 11
 alamakota test10 4j2
+alamapsa test11 gGG
+zero test12 o

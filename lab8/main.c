@@ -46,10 +46,10 @@ int my_printf_hex(char* number, char* param)
 	{
 		if((number[i] == '#') && (number[i+1] == '.') && (number[i+3] == 'j') && isdigit(number[i+2]))
 		{
-			int change_n = isdigit(number[i+2]);
+			int change_n = number[i+2] - '0';
 			i = i+3;
-			*(param + strlen(param)-1) = '\x0';
-			printf("%s ", param);
+			*(param + strlen(param)-1) = ' ';
+			printf("%s", param);
 	
 			char num[10];
 			int roznica = size - i;
@@ -57,6 +57,12 @@ int my_printf_hex(char* number, char* param)
 			strncpy(num, number+i+1, roznica);
 			
 			long long int a = atoi(num);
+			
+			if (a == 0)
+			{
+				putchar('o');
+				break;
+			}
 			char result[10];
 			int i = 0;
 			
@@ -74,9 +80,11 @@ int my_printf_hex(char* number, char* param)
 			{
 				if (k < change_n)
 				{
-					putchar(tolower(result[i]));
+					result[i] = tolower(result[i]);
 					k++;
 				}
+				
+				putchar(result[i]);
 				
 			}
 			k = 0;

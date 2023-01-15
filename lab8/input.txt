@@ -18,3 +18,7 @@ abcdef #.2j 17
 test9
 alamakota #.2j 1234
 test10
+alamapsa #.1j 2730
+test11
+zero #.1j 0
+test12
