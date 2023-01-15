@@ -22,3 +22,5 @@ alamapsa #.1j 2730
 test11
 zero #.1j 0
 test12
+mto #.2j 3003
+test12
