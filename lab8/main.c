@@ -48,8 +48,8 @@ int my_printf_hex(char* number, char* param)
 		{
 			int change_n = isdigit(number[i+2]);
 			i = i+3;
-			*(param + strlen(param)) = '\x0';
-			printf("%s", param);
+			*(param + strlen(param)-1) = '\x0';
+			printf("%s ", param);
 	
 			char num[10];
 			int roznica = size - i;
